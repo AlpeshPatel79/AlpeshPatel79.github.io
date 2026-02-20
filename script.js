@@ -77,4 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 5. Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinksContainer.classList.toggle('nav-open');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinksContainer.classList.remove('nav-open');
+            });
+        });
+    }
 });
